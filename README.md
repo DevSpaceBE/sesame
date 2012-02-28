@@ -24,7 +24,7 @@ Difficult to say as there is no server component yet… ;)
 
 ### Arduino hardware
 
-Upload the [sesame.ino](https://github.com/DevSpace/sesame/blob/master/arduino/sesame.ino) sketch to an Arduino and connect the wires as outlined in the diagram (still missing). Connect the Arduino via USB to the machine running the Node.js server and the 2 extra wires to the intercom.
+Upload the [sesame.ino](https://github.com/DevSpace/sesame/blob/master/arduino/sesame.ino) sketch to an Arduino and connect the wires as outlined in the [diagram](https://github.com/DevSpace/sesame/blob/master/arduino/wiring.png). Connect the Arduino via USB to the machine running the Node.js server and the 2 extra wires to the intercom.
 
 ## Who
 
