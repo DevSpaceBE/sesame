@@ -1,0 +1,29 @@
+
+@import 'reset.css';@font-face{font-family: 'BreeRegular'; src: local('BreeRegular'), local('BreeRegular'), url('BreeRegular.ttf') format('truetype')}
+
+#open span,#twitter span{border-radius:5px}
+#open,#wrapOpen,#wrapTwitter,#twitter{border-radius:7px}
+#wrapOpen,#open,#open span,#twitter,#twitter span,#wrapTwitter{display:block}
+#twitter,#open {padding:2px}
+#wrapOpen,#wrapTwitter{float:right}
+
+
+
+
+hr						{display:none}
+html 					{font-size:100%;font-weight:normal}
+a 						{text-decoration:none}
+#history				{background: url(../images/noise.png) repeat top left,-webkit-linear-gradient(top, #2860b7 0%,#3d8af2 100%)}
+#history section 		{height:377px;border-bottom:1px solid #2E9AFF}
+
+#myNav					{border-top:1px solid #173683;padding-top:19px;height:61px;background: url(../images/bg-nav.png) repeat-x top center,-webkit-linear-gradient(top, #397bc9 0%,#205cc3 100%)}
+#myNav a 			 	{background: -webkit-linear-gradient(top,  #0c2244 0%,#194b9b 100%)}
+
+
+#open,#open span		{width:205px}
+#wrapOpen,#wrapTwitter	{padding:1px;background: -webkit-linear-gradient(top, #2f6fc7 0%,#3d88f0 100%)}
+#wrapOpen				{width:209px;margin-right:6.25%}
+#wrapTwitter			{width:60px;margin-right:2.1875%}
+#open 					{text-align:center}
+#twitter span			{width:56px;height:36px;background: url(../images/twitter.png) no-repeat center center,-webkit-linear-gradient(top, #61abe6 0%,#4993cf 100%)}
+#open span				{padding:9px 0 7px;font-family:'BreeRegular';font-size:1.25em;color:#4C3D00;text-shadow:0 1px 0 #FFEA14;background: -webkit-linear-gradient(top, #fcca00 0%,#e0b404 100%)}
