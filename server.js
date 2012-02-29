@@ -1,5 +1,6 @@
 var url        = require('url');
 var connect    = require('connect');
+var parsers    = require('serialport').parsers;
 var SerialPort = require('serialport').SerialPort;
 
 var port         = process.env.PORT || 2847;
@@ -26,12 +27,16 @@ server.use(function(req, res, next){
 
 /////////////////////
 
+function init(callback) {
+  getSerialPort(callback);
+}
+
 function getSerialPort(callback) {
   var error = void(0);
   try {
-    serialPort = serialPort || new SerialPort(serialDevice);
+    serialPort = serialPort || new SerialPort(serialDevice, {baudrate: 9600});
   } catch (err) {
-    error = "Could not open port";
+    error = "Could not open serial port";
   }
   callback(error, serialPort);
 };
@@ -41,11 +46,19 @@ function openGate(callback) {
     if (err) {
       callback(err);
     } else {
-      serialPort.write(1);
+      console.log("Opening gate...");
+      serialPort.write('1');
       callback();
     }
   });
 };
 
-server.listen(port);
-console.log('Accepting connection on port '+port+'...');
+init(function(err) {
+  if (err) {
+    throw new Error(err);
+  } else {
+    server.listen(port);
+    console.log('Accepting connection on port '+port+'...');
+  }
+});
+
