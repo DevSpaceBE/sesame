@@ -1,29 +1,45 @@
 
 @import 'reset.css';@font-face{font-family: 'BreeRegular'; src: local('BreeRegular'), local('BreeRegular'), url('BreeRegular.ttf') format('truetype')}
 
-#open span,#twitter span{border-radius:5px}
-#open,#wrapOpen,#wrapTwitter,#twitter{border-radius:7px}
+#open span,#youAreAlone p{font-family:'BreeRegular'}
+#youAreAlone{text-align:center}
+#open span,#twitter span,figure img,figure{border-radius:5px}
+#open,#wrapOpen,#wrapTwitter,#twitter,li{border-radius:7px}
 #wrapOpen,#open,#open span,#twitter,#twitter span,#wrapTwitter{display:block}
+figcaption,time{position:absolute}
 #twitter,#open {padding:2px}
 #wrapOpen,#wrapTwitter{float:right}
 
 
-
-
 hr						{display:none}
-html 					{font-size:100%;font-weight:normal}
+html 					{font-size:100%;font-weight:normal;font-family:TrebuchetMS}
 a 						{text-decoration:none}
 #history				{background: url(../images/noise.png) repeat top left,-webkit-linear-gradient(top, #2860b7 0%,#3d8af2 100%)}
-#history section 		{height:377px;border-bottom:1px solid #2E9AFF}
-
-#myNav					{border-top:1px solid #173683;padding-top:19px;height:61px;background: url(../images/bg-nav.png) repeat-x top center,-webkit-linear-gradient(top, #397bc9 0%,#205cc3 100%)}
+#history section 		{height:377px;border-bottom:1px solid #2E9AFF;overflow:scrollbar}
+#myNav					{border-top:1px solid #173683;padding-top:19px;height:63px;background: url(../images/bg-nav.png) repeat-x top center,-webkit-linear-gradient(top, #397bc9 0%,#205cc3 100%)}
 #myNav a 			 	{background: -webkit-linear-gradient(top,  #0c2244 0%,#194b9b 100%)}
-
-
 #open,#open span		{width:205px}
 #wrapOpen,#wrapTwitter	{padding:1px;background: -webkit-linear-gradient(top, #2f6fc7 0%,#3d88f0 100%)}
 #wrapOpen				{width:209px;margin-right:6.25%}
 #wrapTwitter			{width:60px;margin-right:2.1875%}
 #open 					{text-align:center}
-#twitter span			{width:56px;height:36px;background: url(../images/twitter.png) no-repeat center center,-webkit-linear-gradient(top, #61abe6 0%,#4993cf 100%)}
-#open span				{padding:9px 0 7px;font-family:'BreeRegular';font-size:1.25em;color:#4C3D00;text-shadow:0 1px 0 #FFEA14;background: -webkit-linear-gradient(top, #fcca00 0%,#e0b404 100%)}
+#twitter span			{width:56px;height:36px;background: url(../images/twitter.png) no-repeat center center,url(../images/bg-open.png) repeat-x top left,-webkit-linear-gradient(top, #61abe6 0%,#4993cf 100%)}
+#open span				{padding:9px 0 7px;font-size:1.25em;color:#4C3D00;text-shadow:0 1px 0 #FFEA14;background: url(../images/bg-open.png) repeat-x top left,-webkit-linear-gradient(top, #fcca00 0%,#e0b404 100%)}
+ol						{padding-top:20px}
+li 						{margin:0 6.25%;padding:8px;border:1px solid #2658AE;font-size:0.75em;text-shadow:0 1px #3D8AF2;box-shadow:0 1px 2px #2860B7;background: url(../images/bg-guys.png) repeat top left, -webkit-linear-gradient(top, #427cd1 0%,#3e72bd 100%);list-style:none;position:relative}
+li+li 					{margin-top:7px}
+figure 					{width:48px;height:48px;padding:1px;background: -webkit-linear-gradient(top, #2253AC 0%,#5C99D3 100%)}
+figure img 				{width:48px}
+figcaption,time 		{top:28px}
+figcaption 				{color:#081934;left:68px}
+time 					{width:58px;color:#FFFFCC;text-align:right;text-shadow:0 -1px #184689;right:20px;background: url(../images/sesamed.png) no-repeat left center}
+#open:active span		{color:#5D4C02;text-shadow:0 -1px #8D7407;background: -webkit-linear-gradient(top, #6A5703 0%,#AD8C04 100%)}
+#twitter.birdOff span	{background: url(../images/twitter-off.png) no-repeat center center}
+#youAreAlone	 		{padding:20px 0;background-image:none;border:1px dashed #4583CD;color:#FFFFCC;font-size:1em;text-shadow:0 -1px #1F4D92}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2) {
+
+	#twitter.birdOff span	{background-image: url(../images/twitter-off.png) no-repeat center center;-webkit-background-size: 32px 22px}
+  	time 					{background: url(../images/sesamed.png) no-repeat left center;-webkit-background-size: 17px 11px}  
+ 
+ }
