@@ -2,7 +2,7 @@
 /* DevSpace - Sesame project */
 /*****************************/
 
-@import 'reset.css';@font-face{font-family: 'BreeRegular'; src: local('BreeRegular'), local('BreeRegular'), url('BreeRegular.ttf') format('truetype')}#open span,#youAreAlone p,#oops li{font-family:'BreeRegular'}#youAreAlone{text-align:center}#open span,#twitter span,figure img,figure{border-radius:5px}#open,#wrapOpen,#wrapTwitter,#twitter,li{border-radius:7px}#wrapOpen,#open,#open span,#twitter,#twitter span,#wrapTwitter{display:block}figcaption,time{position:absolute}#twitter,#open {padding:2px}#wrapOpen,#wrapTwitter{float:right}#open,#oops li{text-align:center}#youAreAlone,#oops li{text-shadow:0 -1px #1F4D92}li+li,#oops li p+p{margin-top:7px}
+@import 'reset.css';@font-face{font-family: 'BreeRegular'; src: local('BreeRegular'), local('BreeRegular'), url('BreeRegular.ttf') format('truetype')}#open span,#youAreAlone p,#oops li{font-family:'BreeRegular'}#youAreAlone{text-align:center}#open span,#twitter span,figure img{border-radius:5px}#open,#wrapOpen,#wrapTwitter,#twitter,li{border-radius:7px}#wrapOpen,#open,#open span,#twitter,#twitter span,#wrapTwitter{display:block}figcaption,time{position:absolute}#twitter,#open {padding:2px}#wrapOpen,#wrapTwitter{float:right}#open,#oops li{text-align:center}#youAreAlone,#oops li{text-shadow:0 -1px #1F4D92}li+li,#oops li p+p{margin-top:7px}
 
 hr						{display:none}
 html 					{font-size:100%;font-weight:normal;font-family:TrebuchetMS}
@@ -16,14 +16,13 @@ a 						{text-decoration:none}
 #wrapOpen,#wrapTwitter	{padding:1px;background: -webkit-linear-gradient(top, #2f6fc7 0%,#3d88f0 100%)}
 #wrapOpen				{width:209px;margin-right:6.25%}
 #wrapTwitter			{width:60px;margin-right:2.1875%}
-#twitter span			{width:56px;height:36px;background: url(../images/twitter.png) no-repeat center center,url(../images/bg-open.png) repeat-x top left,-webkit-linear-gradient(top, #61abe6 0%,#4993cf 100%)}
+#twitter span			{width:56px;height:36px;background: #61abe6 url(../images/twitter.png) no-repeat center center}
 #open span				{padding:9px 0 7px;font-size:1.25em;color:#4C3D00;text-shadow:0 1px 0 #FFEA14;background: url(../images/bg-open.png) repeat-x top left,-webkit-linear-gradient(top, #fcca00 0%,#e0b404 100%)}
 ol						{padding-top:20px}
-li 						{margin:0 6.25%;padding:8px;border:1px solid #2658AE;font-size:0.75em;text-shadow:0 1px #3D8AF2;box-shadow:0 1px 2px #2860B7;background: url(../images/bg-guys.png) repeat top left, -webkit-linear-gradient(top, #427cd1 0%,#3e72bd 100%);list-style:none;position:relative}
-figure 					{width:48px;height:48px;padding:1px;background: -webkit-linear-gradient(top, #2253AC 0%,#5C99D3 100%)}
-figure img 				{width:48px}
-figcaption,time 		{top:26px}
-figcaption 				{color:#081934;left:68px}
+li 						{margin:0 6.25%;padding:4px 3px 3px 4px;border:1px solid #2658AE;font-size:0.75em;text-shadow:0 1px #3D8AF2;box-shadow:0 1px 2px #2860B7;background: url(../images/bg-guys.png) repeat top left, -webkit-linear-gradient(top, #427cd1 0%,#3e72bd 100%);list-style:none;position:relative}
+figure img 				{width:48px;box-shadow:0 1px 1px rgba(8,26,53,0.5)}
+figcaption,time 		{top:22px}
+figcaption 				{color:#081934;left:60px}
 time 					{width:58px;color:#FFFFCC;text-align:right;text-shadow:0 -1px #184689;right:20px;background: url(../images/sesamed.png) no-repeat left center}
 #twitter.birdOff span	{background: url(../images/twitter-off.png) no-repeat center center}
 #youAreAlone	 		{padding:20px 0;background-image:none;border:1px dashed #4583CD;color:#FFFFCC;font-size:1em}
@@ -36,6 +35,6 @@ time 					{width:58px;color:#FFFFCC;text-align:right;text-shadow:0 -1px #184689;
 
 						#twitter span			{background-image: url(../images/twitter.png) no-repeat center center;-webkit-background-size: 32px 22px}
 						#twitter.birdOff span	{background-image: url(../images/twitter-off.png) no-repeat center center;-webkit-background-size: 32px 22px}
-						time					{background: url(../images/sesamed.png) no-repeat left center;-webkit-background-size: 17px 11px}  
- 
+						time					{background-image: url(../images/sesamed.png) no-repeat left center;-webkit-background-size: 17px 11px}  
+ 						
 }
