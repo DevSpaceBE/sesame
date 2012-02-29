@@ -46,7 +46,7 @@ function openGate(callback) {
     if (err) {
       callback(err);
     } else {
-      console.log("Opening gate...");
+      console.log("Open Sesame...");
       serialPort.write('1');
       callback();
     }
@@ -58,7 +58,7 @@ init(function(err) {
     throw new Error(err);
   } else {
     server.listen(port);
-    console.log('Accepting connection on port '+port+'...');
+    console.log('Accepting connections on port '+port+'...');
   }
 });
 
