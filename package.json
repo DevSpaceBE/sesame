@@ -1,0 +1,25 @@
+{
+  "author": "DevSpace",
+  "contributors": [
+    "Simon Schoeters <simon@nimbly.be> (http://nimbly.be)",
+    "Julien Biezemans <jb@jbpros.com> (http://jbpros.net)",
+    "Romain Gérard <romaingweb@gmail.com> (http://romaingerard.be)",
+    "David Werbrouck <david@aston-agency.com> (http://aston-agency.com)"
+  ],
+  "name": "sesame",
+  "description": "Open Sesame!",
+  "version": "0.0.0",
+  "homepage": "http://devspace.be",
+  "repository": {
+    "url": ""
+  },
+  "engines": {
+    "node": "~0.6.6"
+  },
+  "dependencies": {
+    "connect": "2.0.0",
+    "serialport": "0.7.3"
+  },
+  "devDependencies": {},
+  "private": true
+}
