@@ -54,7 +54,6 @@ function openGate(callback) {
 };
 
 init(function(err) {
-  err = false;
   if (err) {
     throw new Error(err);
   } else {
