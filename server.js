@@ -12,7 +12,7 @@ var serialPort;
 server.use(connect.static(__dirname));
 server.use(function(req, res, next){
   var pathname = url.parse(req.url).pathname;
-  if (pathname == '/open')
+  if (pathname == '/open') {
     openGate(function(err) {
       if (err) {
         res.writeHead(500);
@@ -21,8 +21,9 @@ server.use(function(req, res, next){
         res.end("Opening the gate for you...");
       }
     });
-  else
+  } else {
     next();
+  }
 })
 
 /////////////////////
@@ -46,7 +47,6 @@ function openGate(callback) {
     if (err) {
       callback(err);
     } else {
-      console.log("Open Sesame...");
       serialPort.write('1');
       callback();
     }
@@ -54,6 +54,7 @@ function openGate(callback) {
 };
 
 init(function(err) {
+  err = false;
   if (err) {
     throw new Error(err);
   } else {
