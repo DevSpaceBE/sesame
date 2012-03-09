@@ -13,6 +13,8 @@
     $modalMessageContents = document.getElementById('modalMessageContents');
 
     $openButton.onclick = function(ev) {
+      ev.stopPropagation();
+      ev.preventDefault();
       displayMessage(NOTICE_MESSAGE, "Opening the gate...", false);
       openGate();
       return false;
