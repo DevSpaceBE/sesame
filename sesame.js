@@ -1,5 +1,5 @@
 (function() {
-  var HTTP_INTERNAL_SERVER_ERROR   = 500;
+  var HTTP_OK                      = 200;
   var NOTICE_MESSAGE               = 1;
   var ERROR_MESSAGE                = 2;
   var AUTOHIDE_MESSAGE_TIMEOUT     = 3000;
@@ -15,7 +15,7 @@
     $openButton.onclick = function(ev) {
       ev.stopPropagation();
       ev.preventDefault();
-      displayMessage(NOTICE_MESSAGE, "Opening the gate...", false);
+      displayMessage(NOTICE_MESSAGE, "Please wait...", false);
       openGate();
       return false;
     };
@@ -43,11 +43,10 @@
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
       if (xmlhttp.readyState == XMLHttpRequest.DONE) {
-        if (xmlhttp.status == HTTP_INTERNAL_SERVER_ERROR) {
+        if (xmlhttp.status == HTTP_OK)
+          displayMessage(ERROR_MESSAGE, "Opening the gate...", true);
+        else
           displayMessage(ERROR_MESSAGE, "The gate won't open :(", true);
-        } else {
-          hideMessage();
-        }
       };
     };
     xmlhttp.open('GET', '/open');

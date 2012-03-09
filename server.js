@@ -7,8 +7,6 @@ var port         = process.env.PORT || 2847;
 var serialDevice = process.env.SERIAL_DEVICE || '/dev/tty-usbserial1';
 var server       = connect.createServer();
 
-var serialPort;
-
 server.use(connect.static(__dirname));
 server.use(function(req, res, next){
   var pathname = url.parse(req.url).pathname;
@@ -33,11 +31,13 @@ function init(callback) {
 }
 
 function getSerialPort(callback) {
+  var serialPort;
+
   var error = void(0);
   try {
-    serialPort = serialPort || new SerialPort(serialDevice, {baudrate: 9600});
+    serialPort = new SerialPort(serialDevice, {baudrate: 9600});
   } catch (err) {
-    error = "Could not open serial port";
+    error = "Could not open serial port on " + serialDevice;
   }
   callback(error, serialPort);
 };
@@ -48,17 +48,16 @@ function openGate(callback) {
       callback(err);
     } else {
       serialPort.write('1');
+      serialPort.close();
       callback();
     }
   });
 };
 
 init(function(err) {
-  if (err) {
-    throw new Error(err);
-  } else {
-    server.listen(port);
-    console.log('Accepting connections on port '+port+'...');
-  }
+  if (err)
+    console.log("Warning: " + err + "\n");
+  server.listen(port);
+  console.log('Accepting connections on port '+port+'...');
 });
 
