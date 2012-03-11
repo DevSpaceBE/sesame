@@ -1,38 +1,30 @@
-var INBOUND_DATA  = ">";
-var OUTBOUND_DATA = "<";
-
 var url        = require('url');
-var connect    = require('connect');
+var express    = require('express');
 var parsers    = require('serialport').parsers;
 var SerialPort = require('serialport').SerialPort;
 
 var port         = process.env.PORT || 2847;
 var serialDevice = process.env.SERIAL_DEVICE || '/dev/tty-usbserial1';
-var server       = connect.createServer();
+var app          = express.createServer();
 
-server.use(function(req, res, next){
-  var pathname = url.parse(req.url).pathname;
-  var remote   = req.connection.remoteAddress;
-
-  if (pathname == '/open') {
-    log(remote, INBOUND_DATA, "open gate request");
-    openGate(function(err) {
-      if (err) {
-        res.writeHead(500);
-        res.end("Could not open the gate :(");
-        log(req.connection.remoteAddress, OUTBOUND_DATA, "open gate failure (" + err + ")");
-      } else {
-        res.end("Opening the gate for you...");
-        log(req.connection.remoteAddress, OUTBOUND_DATA, "open gate success");
-      }
-    });
-  } else {
-    if (pathname == '/')
-      log(remote, INBOUND_DATA, "application load (static)");
-    next();
-  }
+app.configure(function() {
+  app.use(express.logger());
+  app.use(app.router);
+  app.use(express.static(__dirname));
 });
-server.use(connect.static(__dirname));
+
+app.get('/open', function(req, res) {
+  openGate(function(err) {
+    if (err) {
+      res.writeHead(500);
+      res.end("Could not open the gate :(");
+    } else {
+      res.writeHead(200);
+      res.end("Opening the gate for you...");
+    }
+  });
+});
+
 
 /////////////////////
 
@@ -64,20 +56,10 @@ function openGate(callback) {
   });
 };
 
-function log(remote, dataDirection, message) {
-  console.log(now() + ' - ' + remote + ' ' + dataDirection + ' ' + message);
-};
-
-function now(d) {
-  function pad(n) { return n<10 ? '0' + n : n; }
-  var d = new Date();
-  return d.getFullYear() + '-' + pad(d.getMonth()) + '-' + pad(d.getDate()) + ' ' + pad(d.getHours()) + ':' + pad(d.getMinutes()) + ':' + pad(d.getSeconds());
-}
-
 init(function(err) {
   if (err)
     console.log("Warning: " + err + "\n");
-  server.listen(port);
+  app.listen(port);
   console.log('Accepting connections on port '+port+'...');
 });
 
