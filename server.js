@@ -2,19 +2,20 @@
   var Sesame  = require('./lib/sesame');
   var express = require('express');
 
-  var assetDir = __dirname + '/public';
-  var port     = process.env.PORT || 2847;
-  var app      = express.createServer();
+  var assetDir  = __dirname + '/public';
+  var port      = process.env.PORT || 2847;
+  var app       = express.createServer();
+  var logStream = process.stdout;
 
   app.configure(function() {
-    app.use(express.logger());
+    app.use(express.logger({stream: logStream}));
     app.use(app.router);
     app.use(express.static(assetDir));
 
     var sesame = new Sesame();
     sesame.check(function(err) {
       if (err)
-        console.log("Warning: " + err + "\n");
+        logStream.write("⚠ " + err + "\n");
     });
   });
 
@@ -32,5 +33,5 @@
   });
 
   app.listen(port);
-  console.log('Accepting connections on port '+port+'...');
+  logStream.write("✔ Accepting connections on port " + port + "...\n");
 })();
