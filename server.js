@@ -2,13 +2,14 @@
   var Sesame  = require('./lib/sesame');
   var express = require('express');
 
-  var port   = process.env.PORT || 2847;
-  var app    = express.createServer();
+  var assetDir = __dirname + '/public';
+  var port     = process.env.PORT || 2847;
+  var app      = express.createServer();
 
   app.configure(function() {
     app.use(express.logger());
     app.use(app.router);
-    app.use(express.static(__dirname));
+    app.use(express.static(assetDir));
 
     var sesame = new Sesame();
     sesame.check(function(err) {
