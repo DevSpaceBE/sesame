@@ -21,8 +21,8 @@ module.exports = {
         "RouiLLa",
         "DevSpace_be"
       ],
-      consumer_key:    "ABCmyTwitterKey",
-      consumer_secret: "DEFmyTwitterSecret"
+      consumerKey:    "ABCmyTwitterKey",
+      consumerSecret: "DEFmyTwitterSecret"
     }
   },
 };
