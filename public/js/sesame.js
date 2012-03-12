@@ -49,7 +49,7 @@
           displayMessage(ERROR_MESSAGE, "The gate won't open :(", true);
       };
     };
-    xmlhttp.open('GET', '/open');
+    xmlhttp.open('GET', '/open?authToken=' + escape(sesameToken));
     xmlhttp.send(null);
   };
 
