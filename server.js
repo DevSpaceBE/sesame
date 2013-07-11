@@ -4,7 +4,7 @@
 
   var assetDir  = __dirname + '/public';
   var port      = process.env.PORT || 2847;
-  var app       = express.createServer();
+  var app       = express();
   var logStream = process.stdout;
 
   app.configure(function() {

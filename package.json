@@ -14,11 +14,11 @@
     "url": ""
   },
   "engines": {
-    "node": "~0.6.6"
+    "node": "~0.10.13"
   },
   "dependencies": {
-    "express": "2.5.8",
-    "serialport": "0.7.3"
+    "express": "3.3.4",
+    "serialport": "1.1.1"
   },
   "devDependencies": {},
   "private": true
