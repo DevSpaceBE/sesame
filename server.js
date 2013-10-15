@@ -1,5 +1,5 @@
 (function main() {
-  var Sesame  = require('./lib/sesame');
+  var Sesame  = require('./lib/sesame-pi');
   var express = require('express');
 
   var assetDir  = __dirname + '/public';
