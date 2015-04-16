@@ -3,7 +3,7 @@
   "contributors": [
     "Simon Schoeters <simon@nimbly.be> (http://nimbly.be)",
     "Julien Biezemans <jb@jbpros.com> (http://jbpros.net)",
-    "Romain Gérard <romaingweb@gmail.com> (http://romaingerard.be)",
+    "Romain Gérard <romaingweb@gmail.com> (http://streed.be)",
     "David Werbrouck <david@aston-agency.com> (http://aston-agency.com)"
   ],
   "name": "sesame",
@@ -11,15 +11,15 @@
   "version": "0.0.0",
   "homepage": "http://devspace.be",
   "repository": {
-    "url": ""
+    "url": "https://github.com/DevSpace/sesame"
   },
   "engines": {
-    "node": "~0.10.13"
+    "node": "~0.12.2"
   },
   "dependencies": {
-    "express": "3.3.4",
-    "serialport": "1.1.1",
-    "pi-gpio": "0.0.2"
+    "express": "4.12.3",
+    "serialport": "1.6.3",
+    "pi-gpio": "0.0.7"
   },
   "devDependencies": {},
   "private": true
