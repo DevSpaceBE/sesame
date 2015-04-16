@@ -12,7 +12,10 @@
     $modalMessage         = document.getElementById('modalMessage');
     $modalMessageContents = document.getElementById('modalMessageContents');
 
-    $openButton.onclick = function(ev) {
+    var isTouchDevice = (('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch);
+    var eventType = (isTouchDevice) ? 'ontouchend' : 'onclick';
+
+    $openButton[eventType] = function(ev) {
       ev.stopPropagation();
       ev.preventDefault();
       displayMessage(NOTICE_MESSAGE, "Please wait...", false);
