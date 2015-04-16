@@ -5,15 +5,16 @@
 @import 'reset.css';@font-face{font-family: 'BreeRegular'; src: local('BreeRegular'), local('BreeRegular'), url('BreeRegular.ttf') format('truetype')}#open span,#youAreAlone p,#oops li{font-family:'BreeRegular'}#youAreAlone{text-align:center}#open span,#twitter span,figure img{border-radius:5px}#open,#wrapOpen,#wrapTwitter,#twitter,li{border-radius:7px}#wrapOpen,#open,#open span,#twitter,#twitter span,#wrapTwitter{display:block}figcaption,time{position:absolute}#twitter,#open {padding:2px}#wrapOpen,#wrapTwitter{float:right}#open,#oops li{text-align:center}#youAreAlone,#oops li{text-shadow:0 -1px #1F4D92}li+li,#oops li p+p{margin-top:7px}
 
 hr						{display:none}
-html 					{font-size:100%;font-weight:normal;font-family:TrebuchetMS}
+html 					{height:100%;font-size:100%;font-weight:normal;font-family:TrebuchetMS}
+body					{height:100%;}
 img 					{-webkit-touch-callout:none}
 a 						{text-decoration:none}
-#history				{background: url(../images/noise.png) repeat top left,-webkit-linear-gradient(top, #2860b7 0%,#3d8af2 100%)}
-#history section 		{min-height:357px;padding-bottom:20px;border-bottom:1px solid #2E9AFF;overflow:scrollbar}
+#history				{box-sizing:border-box;height:100%; background: url(../images/noise.png) repeat top left,-webkit-linear-gradient(top, #2860b7 0%,#3d8af2 100%); padding-bottom: 104px;}
+#history section 		{height:100%;padding-bottom:20px;border-bottom:1px solid #2E9AFF;overflow:scrollbar;}
 #modalMessage {display:block;opacity:0;position:absolute;z-index:50;width:200px;height:70px;top:45%;left:-100%;margin-left:-100px;margin-top:-35px;background: rgba(0,0,0,.4);border-radius:7px;box-shadow:0px 2px 3px rgba(0,0,0,.6);border:1px solid #336299;-webkit-transform: translate3d(0,-30%,0);-webkit-transition:-webkit-transform .25s ease-out,opacity .25s ease-out,left 0s linear .2s;}
 #modalMessage.displayed {opacity:1;left:50%;-webkit-transform:translate3d(0,0,0);-webkit-transition:-webkit-transform .075s ease-in,opacity .075s ease-in;}
 #modalMessage p {margin:auto;text-align:center;height:80px;line-height:70px;text-shadow:0 -1px rgba(0,0,0,.7);color:#ffc;}
-#myNav					{border-top:1px solid #173683;padding-top:19px;height:63px;background: url(../images/bg-nav.png) repeat-x top center,-webkit-linear-gradient(top, #397bc9 0%,#205cc3 100%)}
+#myNav					{border-top:1px solid #173683;padding-top:19px;height:63px;background: url(../images/bg-nav.png) repeat-x top center,-webkit-linear-gradient(top, #397bc9 0%,#205cc3 100%);position:fixed;bottom:0; width:100%;}
 #myNav a 			 	{background: -webkit-linear-gradient(top,#0c2244 0%,#194b9b 100%)}
 #open,#open span		{width:205px}
 #wrapOpen,#wrapTwitter	{padding:1px;background: -webkit-linear-gradient(top, #2f6fc7 0%,#3d88f0 100%)}
@@ -40,11 +41,9 @@ time 					{width:58px;color:#FFFFCC;text-align:right;text-shadow:0 -1px #184689;
 						time					{background-image: url(../images/sesamed.png) no-repeat left center;-webkit-background-size: 17px 11px}
 }
 @media screen and (min-width:768px){
-						#history section{min-height:841px}
 						#twitter.birdOff span	{background: url(../images/twitter-small-off.png) no-repeat center center}
 						#twitter span			{background: #61abe6 url(../images/twitter-small.png) no-repeat center center}
 						time 					{background: url(../images/sesamed-small.png) no-repeat left -1px}
 }
 @media screen and (min-width:1024px){
-						#history section{min-height:585px}
 }
