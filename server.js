@@ -13,6 +13,7 @@
     app.use(express.static(assetDir));
 
     var sesame = new Sesame();
+
     sesame.check(function (err) {
       if (err)
         logStream.write("⚠ " + err + "\n");
