@@ -17,15 +17,9 @@
     "node": "~0.12.2"
   },
   "dependencies": {
-<<<<<<< HEAD
-    "express": "4.12.3",
-    "serialport": "1.6.3",
-    "pi-gpio": "0.0.7"
-=======
     "express": "3.3.4",
     "serialport": "1.1.1",
     "pi-gpio": "0.0.2"
->>>>>>> Update sesame
   },
   "devDependencies": {},
   "private": true
