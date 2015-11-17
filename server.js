@@ -22,13 +22,13 @@
 
   app.get('/open', function (req, res) {
     var sesame = new Sesame();
+
     sesame.open(function (err) {
       if (err) {
-        res.writeHead(500);
-        res.end("Could not open the gate :(");
+        logStream.write("⚠ " + err + "\n");
+        res.send(500, "Could not open the gate :(");
       } else {
-        res.writeHead(200);
-        res.end("Opening the gate for you...");
+        res.send(200, "Opening the gate for you...");
       }
     });
   });
