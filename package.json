@@ -11,7 +11,7 @@
   "version": "0.0.0",
   "homepage": "http://devspace.be",
   "repository": {
-    "url": "https://github.com/DevSpace/sesame"
+    "url": "https://github.com/DevSpaceBE/sesame"
   },
   "engines": {
     "node": "~0.12.2"
