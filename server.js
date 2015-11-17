@@ -7,21 +7,21 @@
   var app       = express();
   var logStream = process.stdout;
 
-  app.configure(function() {
+  app.configure(function () {
     app.use(express.logger({stream: logStream}));
     app.use(app.router);
     app.use(express.static(assetDir));
 
     var sesame = new Sesame();
-    sesame.check(function(err) {
+    sesame.check(function (err) {
       if (err)
         logStream.write("⚠ " + err + "\n");
     });
   });
 
-  app.get('/open', function(req, res) {
+  app.get('/open', function (req, res) {
     var sesame = new Sesame();
-    sesame.open(function(err) {
+    sesame.open(function (err) {
       if (err) {
         res.writeHead(500);
         res.end("Could not open the gate :(");
