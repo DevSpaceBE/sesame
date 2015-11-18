@@ -2,7 +2,7 @@
 
 ## What
 
-A mobile webapp, linked with a Node.js server and an Arduino to open the boom gate of our parking lot.
+A mobile webapp, linked with a Node.js server and a RaspberryPi to open the boom gate of our parking lot.
 
 ## Why
 
@@ -10,21 +10,13 @@ Our coworking space has a parking at the back and a boom gate with RFID cards to
 
 ## How
 
-Our parking boom gate can be opened with a button from inside the office. The Arduino uses a relay which closes the circuit for a few milliseconds when triggered over USB, faking a button press (and thus opening the gate). The mobile webapp talks with the server component which passes the command to the Arduino via a serial connection.
-
-## Status
-
-The project is still in very early alpha phase. The design and slicing of the mobile webapp is done, as is the first Arduino hardware prototype. The Node.js server to link the two still needs to be build.
+Our parking boom gate can be opened with a button from inside the office. The RaspberryPi uses a relay which closes the circuit for a few milliseconds when triggered over USB, faking a button press (and thus opening the gate). The mobile webapp talks with the server component which passes the command to the RaspberryPi via the GPIO.
 
 ## Installation
 
 ### Mobile webapp
 
-Difficult to say as there is no server component yet… ;)
-
-### Arduino hardware
-
-Upload the [sesame.ino](https://github.com/DevSpace/sesame/blob/master/arduino/sesame.ino) sketch to an Arduino and connect the wires as outlined in the [diagram](https://github.com/DevSpace/sesame/blob/master/arduino/wiring.png). Connect the Arduino via USB to the machine running the Node.js server and the 2 extra wires to the intercom.
+The mobile webapp is served by Node.js express app.
 
 ## Who
 
