@@ -20,7 +20,7 @@
     });
   });
 
-  app.get('/open', function (req, res) {
+  app.post('/open', function (req, res) {
     var sesame = new Sesame();
 
     sesame.open(function (err) {

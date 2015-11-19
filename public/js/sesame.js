@@ -52,8 +52,8 @@
           displayMessage(ERROR_MESSAGE, "The gate won't open :(", true);
       };
     };
-    xmlhttp.open('GET', '/open');
-    xmlhttp.send(null);
+    xmlhttp.open('POST', '/open');
+    xmlhttp.send();
   };
 
   window.onload = init;
