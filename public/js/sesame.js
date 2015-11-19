@@ -12,12 +12,12 @@
     $modalMessage         = document.getElementById('modalMessage');
     $modalMessageContents = document.getElementById('modalMessageContents');
 
-    var isTouchDevice = (('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch);
-    var eventType = (isTouchDevice) ? 'ontouchend' : 'onclick';
+    $openButton['ontouchend'] = openButtonHandler;
+    $openButton['onclick'] = openButtonHandler;
 
-    $openButton[eventType] = function(ev) {
-      ev.stopPropagation();
-      ev.preventDefault();
+    function openButtonHandler(event) {
+      event.stopPropagation();
+      event.preventDefault();
       displayMessage(NOTICE_MESSAGE, "Please wait...", false);
       openGate();
       return false;
